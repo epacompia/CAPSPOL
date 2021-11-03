@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAPSPOL.Common", "CAPSPOL.Common\CAPSPOL.Common.csproj", "{144BD5B4-EBFB-435D-9087-979F476B9581}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAPSPOL.API", "CAPSPOL.API\CAPSPOL.API.csproj", "{2AD80A53-E71D-4704-A523-102DDD0729A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{144BD5B4-EBFB-435D-9087-979F476B9581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{144BD5B4-EBFB-435D-9087-979F476B9581}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{144BD5B4-EBFB-435D-9087-979F476B9581}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{144BD5B4-EBFB-435D-9087-979F476B9581}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AD80A53-E71D-4704-A523-102DDD0729A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AD80A53-E71D-4704-A523-102DDD0729A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AD80A53-E71D-4704-A523-102DDD0729A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AD80A53-E71D-4704-A523-102DDD0729A8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {49085A0F-BE01-4899-91BA-3616B7E4E625}
+	EndGlobalSection
+EndGlobal
