@@ -1,22 +1,21 @@
-﻿@model CAPSPOL.API.Data.Entities.Grade
+﻿@model CAPSPOL.API.Data.Entities.Speciality
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Create";
 }
 
-<h1>Edit</h1>
+<h1>Crear Especialidad</h1>
 
-<h4>Grade</h4>
+
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+    <div class="col-md-12">
+        <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <partial name="_Grade" />
+            <partial name="_Speciality" />
             @*<input type="hidden" asp-for="Flag" value="true" />*@
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Crear" class="btn btn-primary" />
                 <a asp-action="Index" class="btn btn-success">Regresar</a>
             </div>
         </form>

@@ -1,10 +1,10 @@
-﻿@model IEnumerable<CAPSPOL.API.Data.Entities.Grade>
+﻿@model IEnumerable<CAPSPOL.API.Data.Entities.Speciality>
 
 @{
     ViewData["Title"] = "Index";
-    ViewData["TitlePage"] = "Lista de Grados";
+    ViewData["TitlePage"] = "Lista de Especialidades";
     ViewData["TitleFooter"] = "CAPSPOL - Grados";
-    ViewData["NombrePagina"] = "Grados";
+    ViewData["NombrePagina"] = "Especialidades";
 }
 
 
@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
 
-<a class="btn btn-primary mb-3" asp-controller="Grades" asp-action="Create">Crear Grado Aqui</a>
+<a class="btn btn-primary mb-3" asp-controller="Specialities" asp-action="Create">Nuevo</a>
 
 <table id="Table" class="table table-bordered table-striped">
     <thead>
@@ -59,7 +59,7 @@
                 ]
             });
 
-            sc_deleteDialog.openModal('deleteItem', true, 'btnYesDelete', '/Grades/Delete/', false);
+            sc_deleteDialog.openModal('deleteItem', true, 'btnYesDelete', '/Specialities/Delete/', false);
 
         });
     </script>

@@ -1,10 +1,10 @@
-﻿@model IEnumerable<CAPSPOL.API.Data.Entities.Grade>
+﻿@model IEnumerable<CAPSPOL.API.Data.Entities.PoliceStation>
 
 @{
     ViewData["Title"] = "Index";
-    ViewData["TitlePage"] = "Lista de Grados";
-    ViewData["TitleFooter"] = "CAPSPOL - Grados";
-    ViewData["NombrePagina"] = "Grados";
+    ViewData["TitlePage"] = "Lista de Comisarias";
+    ViewData["TitleFooter"] = "CAPSPOL - Comisarias";
+    ViewData["NombrePagina"] = "Comisarias";
 }
 
 
@@ -12,14 +12,14 @@
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
 
-<a class="btn btn-primary mb-3" asp-controller="Grades" asp-action="Create">Crear Grado Aqui</a>
+<a class="btn btn-primary mb-3" asp-controller="PoliceStations" asp-action="Create">Nuevo</a>
 
 <table id="Table" class="table table-bordered table-striped">
     <thead>
         <tr>
             <th>@Html.DisplayNameFor(model => model.Id)</th>
             <th>@Html.DisplayNameFor(model => model.Name)</th>
-            <th>@Html.DisplayNameFor(model => model.Description)</th>
+
             <th>Opciones</th>
         </tr>
     </thead>
@@ -29,7 +29,6 @@
             <tr>
                 <td>@item.Id</td>
                 <td>@item.Name</td>
-                <td>@item.Description</td>
                 <td style="text-align:center">
                     <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a>
                     @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
@@ -59,7 +58,7 @@
                 ]
             });
 
-            sc_deleteDialog.openModal('deleteItem', true, 'btnYesDelete', '/Grades/Delete/', false);
+            sc_deleteDialog.openModal('deleteItem', true, 'btnYesDelete', '/PoliceStations/Delete/', false);
 
         });
     </script>

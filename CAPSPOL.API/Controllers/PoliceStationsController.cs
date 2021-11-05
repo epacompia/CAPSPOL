@@ -1,145 +1,138 @@
-﻿using System;
+﻿using CAPSPOL.API.Data;
+using CAPSPOL.API.Data.Entities;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using CAPSPOL.API.Data;
-using CAPSPOL.API.Data.Entities;
 
 namespace CAPSPOL.API.Controllers
 {
-    public class GradesController : Controller
+    public class PoliceStationsController: Controller
     {
         private readonly DataContext _context;
 
-        public GradesController(DataContext context)
+        public PoliceStationsController(DataContext context)
         {
             _context = context;
         }
 
-        // GET: VehicleTypes
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Grades.Where(x=>x.Flag==true).ToListAsync());
+            return View(await _context.PoliceStations.Where(x=>x.Flag==true).ToListAsync());
         }
 
-        // GET: VehicleTypes/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: VehicleTypes/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Grade grade)
+        public async Task<IActionResult> Create(PoliceStation policeStation)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Grades.Add(grade);
-                    grade.Flag = true;
+                    _context.PoliceStations.Add(policeStation);
+                    policeStation.Flag = true;
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateException dbUpdateException)
                 {
+
                     if (dbUpdateException.InnerException.Message.Contains("duplicate"))
                     {
-                        ModelState.AddModelError(string.Empty, "Ya existe este Grado en la base de datos 1");
+                        ModelState.AddModelError(string.Empty,"La comisaria ya existe en la base de datos");
                     }
                     else
                     {
-                        ModelState.AddModelError(string.Empty, "Ya existe este Grado en la base de datos 2");
+                        ModelState.AddModelError(string.Empty, "La comisaria ya existe en la base de datos");
                     }
                 }
-                catch (Exception exception)
+                catch(Exception exception)
                 {
                     ModelState.AddModelError(string.Empty, exception.Message);
                 }
             }
-            return View(grade);
+
+            return View(policeStation);
         }
 
-        // GET: VehicleTypes/Edit/5
+
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
-            Grade grade = await _context.Grades.FindAsync(id);
-            if (grade == null)
+            if (id==null)
             {
                 return NotFound();
             }
-            return View(grade);
+            PoliceStation policeStation = await _context.PoliceStations.FindAsync(id);
+            if (policeStation==null)
+            {
+                return NotFound();
+            }
+            return View(policeStation);
+
         }
 
-        // POST: VehicleTypes/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Grade grade)
+        public async Task<IActionResult> Edit(int? id, PoliceStation policeStation)
         {
-            if (id != grade.Id)
+            if (id!=policeStation.Id)
             {
                 return NotFound();
             }
-
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(grade);
+                    _context.PoliceStations.Update(policeStation);
+                    policeStation.Flag = true;
                     await _context.SaveChangesAsync();
-                    grade.Flag = true;
                     return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateException dbUpdateException)
                 {
                     if (dbUpdateException.InnerException.Message.Contains("duplicate"))
                     {
-                        ModelState.AddModelError(string.Empty, "Ya existe este Grado en la base de datos 1");
+                        ModelState.AddModelError(string.Empty, "La Comisaria ya existe en la base de datos");
                     }
                     else
                     {
-                        ModelState.AddModelError(string.Empty, "Ya existe este Grado en la base de datos 2");
+                        ModelState.AddModelError(string.Empty, "La Comisaria ya existe en la base de datos");
                     }
+
                 }
                 catch (Exception exception)
                 {
                     ModelState.AddModelError(string.Empty, exception.Message);
                 }
-
-
             }
-            return View(grade);
+            return View(policeStation);
         }
 
-        // GET: VehicleTypes/Delete/5
+
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
+            if (id==null)
             {
                 return NotFound();
             }
 
-            Grade grade = await _context.Grades
-                .FirstOrDefaultAsync(m => m.Id == id);
-            grade.Flag = false;
-            if (grade == null)
+            PoliceStation policeStation = await _context.PoliceStations.FirstOrDefaultAsync(x => x.Id == id);
+            policeStation.Flag = false;
+            if (policeStation==null)
             {
                 return NotFound();
             }
-            _context.Grades.Remove(grade);
+
+            _context.PoliceStations.Update(policeStation);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
