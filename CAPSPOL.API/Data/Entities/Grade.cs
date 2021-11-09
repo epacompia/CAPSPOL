@@ -15,7 +15,7 @@ namespace CAPSPOL.API.Data.Entities
         [Required(ErrorMessage = "El campo {0} es requerido")]
         public string Name { get; set; }
 
-        [Display(Name = "Descripcion")]
+        [Display(Name = "Descripción")]
         [MaxLength(256, ErrorMessage = "El campo {0} no puede exceder mas de {1} caracteres")]
         public string Description { get; set; }
 

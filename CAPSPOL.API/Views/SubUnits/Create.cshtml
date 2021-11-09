@@ -1,0 +1,29 @@
+﻿@model CAPSPOL.API.Data.Entities.SubUnit
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Crear Sub Unidad</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <partial name="_SubUnit" />
+            @*<input type="hidden" asp-for="Flag" value="true" />*@
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-success">Regresar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

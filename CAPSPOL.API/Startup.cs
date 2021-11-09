@@ -27,6 +27,9 @@ namespace CAPSPOL.API
                 x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            //INYECTANDO MI SEEDER
+            services.AddTransient<SeedDb>(); //SOLO EJECUTARLO UNA SOLA VEZ
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
