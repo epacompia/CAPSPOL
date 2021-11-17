@@ -33,7 +33,7 @@ namespace CAPSPOL.API.Data.Entities
         public bool Flag { get; set; }
 
         ////RELACION DE UNO A UNO CON USER
-        //public int UserId { get; set; }
-        //public User User { get; set; }
+        public int UserId { get; set; }
+
     }
 }

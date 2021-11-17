@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using CAPSPOL.Common.Enums;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -82,12 +83,16 @@ namespace CAPSPOL.API.Data.Entities
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? Last_Ascent { get; set; }
 
+        //REGERENCIA AL ENUM 
+        [Display(Name = "Tipo de Usuario")]
+        public UserType UserType { get; set; }
+
         public bool Flag { get; set; }
 
 
 
         ////1. REFERENCIA A TABLA COVID19_SITUATION
-        //public Covid19_Situation covid19_Situation { get; set; }
+        public Covid19_Situation Covid19_Situation { get; set; }
 
 
 
