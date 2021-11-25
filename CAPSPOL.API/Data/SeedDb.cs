@@ -14,7 +14,7 @@ namespace CAPSPOL.API.Data
         {
             _context = context;
         }
-
+        //ALGO MAS CAUSA
         public async Task SeedAsync()
         {
             await _context.Database.EnsureCreatedAsync();  //si es que la bd no existe la craera
