@@ -59,11 +59,11 @@ namespace CAPSPOL.API.Data.Entities
         public DateTime Date_Of_Birth { get; set; }
 
 
-        [Display(Name = "Correo institucional")]
-        [DataType(DataType.EmailAddress)]
-        [MaxLength(256, ErrorMessage = "El campo {0} no puede tener mas de {1} caracteres")]
-        [Required(ErrorMessage = "El campo {0} es requerido")]
-        public string Institutional_Email { get; set; }
+        //[Display(Name = "Correo institucional")]
+        //[DataType(DataType.EmailAddress)]
+        //[MaxLength(256, ErrorMessage = "El campo {0} no puede tener mas de {1} caracteres")]
+        //[Required(ErrorMessage = "El campo {0} es requerido")]
+        //public string Institutional_Email { get; set; }
 
 
         [Display(Name = "Correo personal")]
@@ -92,7 +92,7 @@ namespace CAPSPOL.API.Data.Entities
 
 
         ////1. REFERENCIA A TABLA COVID19_SITUATION
-        public Covid19_Situation Covid19_Situation { get; set; }
+        //public Covid19_Situation Covid19_Situation { get; set; }
 
 
 

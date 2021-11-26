@@ -1,4 +1,5 @@
 ﻿using CAPSPOL.API.Data.Entities;
+using CAPSPOL.Common.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,16 @@ namespace CAPSPOL.API.Data
             await CheckSpecialitiesAsync();
             await CheckSubUnitsAsync();
 
+            await ChekcRolesAsync();
+            await ChekUserAsync("Eduardo Natalio","Pacompia","Lopez","Masculino","Mz 2 Lt 3 Villa de Jesus Villa el salvador",43908196,"953553770","2782550",DateTime.Now,"eduardopacompialopez@policia.gob.pe","eduardopacompialopez@gmail.com","CASADO", DateTime.Now, UserType.Admin,true);
+            await ChekUserAsync("Eduardo Natalio", "Pacompia", "Lopez", "Masculino", "Mz 2 Lt 3 Villa de Jesus Villa el salvador", 43908196, "953553770", "2782550", DateTime.Now, "eduardopacompialopez@policia.gob.pe", "eduardopacompialopez@gmail.com", "CASADO",  DateTime.Now, UserType.User, true);
+            await ChekUserAsync("Eduardo Natalio", "Pacompia", "Lopez", "Masculino", "Mz 2 Lt 3 Villa de Jesus Villa el salvador", 43908196, "953553770", "2782550", DateTime.Now, "eduardopacompialopez@policia.gob.pe", "eduardopacompialopez@gmail.com", "CASADO", DateTime.Now, UserType.User, true);
+
+
         }
+
+
+
         //LLENANDO SUBUNIT
         private async Task CheckSubUnitsAsync()
         {

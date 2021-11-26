@@ -1,6 +1,9 @@
 using CAPSPOL.API.Data;
+using CAPSPOL.API.Data.Entities;
+using CAPSPOL.API.Helpers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,6 +25,19 @@ namespace CAPSPOL.API
         {
             services.AddControllersWithViews();
 
+            //1. INYECTANDO EL USER AL SISTEMA
+            services.AddIdentity<User, IdentityRole>(x =>
+            {
+                x.User.RequireUniqueEmail = true;
+                x.Password.RequireDigit = false;
+                x.Password.RequiredUniqueChars = 0;
+                x.Password.RequireLowercase = false;
+                x.Password.RequireNonAlphanumeric = false;
+                x.Password.RequireUppercase = false;
+            }).AddEntityFrameworkStores<DataContext>();
+
+
+
             services.AddDbContext<DataContext>(x =>
             {
                 x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
@@ -29,6 +45,8 @@ namespace CAPSPOL.API
 
             //INYECTANDO MI SEEDER
             services.AddTransient<SeedDb>(); //SOLO EJECUTARLO UNA SOLA VEZ
+            //2. AHORA INYECTADO EL USERHELPER CON SCOPE
+            services.AddScoped<IUserHelper, UserHelper>();
 
         }
 
@@ -47,7 +65,7 @@ namespace CAPSPOL.API
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseAuthentication();
             app.UseRouting();
 
             app.UseAuthorization();
