@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CAPSPOL.API.Helpers
 {
-    interface IUserHelper
+    public interface IUserHelper
     {
         Task<User> GetUserAsync(string email);
         Task<IdentityResult> AddUserAsync(User user, string password);

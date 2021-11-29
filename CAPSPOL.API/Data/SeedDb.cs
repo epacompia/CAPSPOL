@@ -1,4 +1,5 @@
 ﻿using CAPSPOL.API.Data.Entities;
+using CAPSPOL.API.Helpers;
 using CAPSPOL.Common.Enums;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,12 @@ namespace CAPSPOL.API.Data
     public class SeedDb
     {
         private readonly DataContext _context;
+        private readonly IUserHelper _userHelper;
 
-        public SeedDb(DataContext context)
+        public SeedDb(DataContext context, IUserHelper userHelper)
         {
             _context = context;
+            _userHelper = userHelper;
         }
         //ALGO MAS CAUSA
         public async Task SeedAsync()
@@ -27,10 +30,46 @@ namespace CAPSPOL.API.Data
 
             await ChekcRolesAsync();
             await ChekUserAsync("Eduardo Natalio","Pacompia","Lopez","Masculino","Mz 2 Lt 3 Villa de Jesus Villa el salvador",43908196,"953553770","2782550",DateTime.Now,"eduardopacompialopez@policia.gob.pe","eduardopacompialopez@gmail.com","CASADO", DateTime.Now, UserType.Admin,true);
-            await ChekUserAsync("Eduardo Natalio", "Pacompia", "Lopez", "Masculino", "Mz 2 Lt 3 Villa de Jesus Villa el salvador", 43908196, "953553770", "2782550", DateTime.Now, "eduardopacompialopez@policia.gob.pe", "eduardopacompialopez@gmail.com", "CASADO",  DateTime.Now, UserType.User, true);
-            await ChekUserAsync("Eduardo Natalio", "Pacompia", "Lopez", "Masculino", "Mz 2 Lt 3 Villa de Jesus Villa el salvador", 43908196, "953553770", "2782550", DateTime.Now, "eduardopacompialopez@policia.gob.pe", "eduardopacompialopez@gmail.com", "CASADO", DateTime.Now, UserType.User, true);
+            await ChekUserAsync("Liliana", "Santa Cruz", "Davila", "Femenino", "Mz 1 lt 234 San Miguel", 46070067, "945632362", "2782550", DateTime.Now, "lilianasanta@policia.gob.pe", "liliz@gmail.com", "CASADO",  DateTime.Now, UserType.User, true);
+            await ChekUserAsync("Camilo", "Chapiama", "Cora", "Masculino", "Lince 244", 44774124, "923632541", "4555555", DateTime.Now, "chapiama@policia.gob.pe", "chapo@gmail.com", "CASADO", DateTime.Now, UserType.User, true);
 
 
+        }
+
+        private async Task ChekUserAsync(string firstName, string lastName1, string lastName2, string sex, string address, int dni, string phoneNumber, string landLine, DateTime dateOfBirth, string email, string personalEmail, string civilStatus, DateTime lastAscent, UserType userType, bool flag)
+        {
+            User user = await _userHelper.GetUserAsync(email);
+            if (user == null)
+            {
+                user = new User
+                {
+                    
+                    Firstname = firstName,
+                    Lastname1 = lastName1,
+                    Lastname2 = lastName2,
+                    Sex = sex,
+                    Address = address,
+                    Dni = dni,
+                    PhoneNumber = phoneNumber,
+                    Landline = landLine,
+                    Date_Of_Birth = dateOfBirth,
+                    Email = email,
+                    Personal_Email = personalEmail,
+                    Civil_Status = civilStatus,
+                    Last_Ascent = lastAscent,
+                    UserName = email,
+                    UserType = userType,                    
+                    Flag = flag
+                };
+                await _userHelper.AddUserAsync(user, "123456");
+                await _userHelper.AddUserToRoleAsync(user, userType.ToString());
+            }
+        }
+
+        private async Task ChekcRolesAsync()
+        {
+            await _userHelper.CheckRoleAsync(UserType.Admin.ToString());
+            await _userHelper.CheckRoleAsync(UserType.User.ToString());
         }
 
 

@@ -22,13 +22,14 @@ namespace CAPSPOL.API.Helpers
             _userManager = userManager;
             _roleManager = roleManager;
             _context = context;
-           
+
         }
-
-
 
         public async Task<IdentityResult> AddUserAsync(User user, string password)
         {
+            //TODO: [_userManager.CreateAsync] te devuelve una tarea si esta paso sin ningun error entonces la propiedad Succeeded es Verdadero de lo contrario False
+            //var resultado = await _userManager.CreateAsync(user, password);
+            //return resultado;
             return await _userManager.CreateAsync(user, password);
         }
 
