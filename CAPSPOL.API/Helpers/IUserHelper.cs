@@ -1,4 +1,5 @@
 ﻿using CAPSPOL.API.Data.Entities;
+using CAPSPOL.API.Models;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace CAPSPOL.API.Helpers
         Task<bool> IUserInRoleAsync(User user, string roleName);
 
         //CREANDO LOS METODOS PARA LOGEARME Y DESLOGUEARME
-        //Task<SignInResult> LoginAsync(LoginViewModel model);
-        //Task LogoutAsync();
+        Task<SignInResult> LoginAsync(LoginViewModel model);
+        Task LogoutAsync();
     }
 }

@@ -57,7 +57,7 @@ namespace CAPSPOL.API.Data
                     Personal_Email = personalEmail,
                     Civil_Status = civilStatus,
                     Last_Ascent = lastAscent,
-                    UserName = email,
+                    UserName = email, //TENER EN CUENTA ESTE CAMPO QUE ES OBLIGATORIO
                     UserType = userType,                    
                     Flag = flag
                 };
