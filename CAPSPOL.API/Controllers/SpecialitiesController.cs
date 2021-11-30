@@ -1,5 +1,6 @@
 ﻿using CAPSPOL.API.Data;
 using CAPSPOL.API.Data.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace CAPSPOL.API.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class SpecialitiesController:Controller
     {
         private readonly DataContext _context;

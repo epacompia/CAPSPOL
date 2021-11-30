@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CAPSPOL.API.Data;
 using CAPSPOL.API.Data.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CAPSPOL.API.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class GradesController : Controller
     {
         private readonly DataContext _context;
