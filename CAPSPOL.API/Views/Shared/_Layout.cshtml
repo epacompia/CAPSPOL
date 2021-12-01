@@ -50,7 +50,6 @@
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Messages Dropdown Menu -->
-               
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
@@ -79,14 +78,26 @@
                     </div>
                 </li>
                 <!--NOMBRE DE SESION DE USUARIO-->
-                @if(User.Identity.IsAuthenticated)
+                @if (User.Identity.IsAuthenticated)
                 {
-                    <li class="nav-item">
+                    @*<li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="ChangeUser">@User.Identity.Name</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Cerrar Sesion</a>
+                    </li>*@
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            @User.Identity.Name
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" asp-controller="Account" asp-action="ChangeUser">Mi Perfil</a>
+                            <a class="dropdown-item" asp-controller="Account" asp-action="Logout">Cerrar Sesión</a>                           
+                        </div>
                     </li>
+
                 }
                 else
                 {
@@ -94,10 +105,10 @@
                 }
 
                 @*<li class="nav-item">
-                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                        <i class="fas fa-th-large"></i>
-                    </a>
-                </li>*@
+            <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+                <i class="fas fa-th-large"></i>
+            </a>
+        </li>*@
             </ul>
         </nav>
         <!-- /.navbar -->
