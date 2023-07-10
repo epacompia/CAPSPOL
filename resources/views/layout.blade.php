@@ -7,18 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../images/favicon.ico">
+    {{-- <link rel="icon" href="../images/favicon.ico"> --}}
+    <link rel="icon" href="{{ asset('images/favicon.ico') }}">
 
     <title>DIRCOCOR - CAPSPOL</title>
-
     <!-- Vendors Style-->
-    {{-- <link rel="stylesheet" href="../css1/vendors_css.css"> --}}
-    <link rel="stylesheet" href="{{ asset('css1/vendors_css.css') }}">
-
-
+    {{-- <link rel="stylesheet" href="../css/vendors_css.css"> --}}
+    <link rel="stylesheet" href="{{ asset('css/vendors_css.css') }}">
     <!-- Style-->
-    <link rel="stylesheet" href="../css1/style.css">
-    <link rel="stylesheet" href="../css1/skin_color.css">
+    {{-- <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/skin_color.css"> --}}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/skin_color.css') }}">
+
 
 </head>
 
@@ -182,7 +183,9 @@
                         <a href="index.html">
                             <!-- logo for regular state and mobile devices -->
                             <div class="d-flex align-items-center justify-content-center">
-                                <img src="../images/logo-dark.png" alt="">
+                                {{-- <img src="../images/logo-dark.png" alt=""> --}}
+                                <img src="{{ asset('images/logo-dark.png') }}" alt="">
+
                                 <h3><b>CAPSPOL</b></h3>
                             </div>
                         </a>
@@ -230,7 +233,7 @@
                     <li class="treeview">
                         <a href="#">
                             <i data-feather="file"></i>
-                            <span>Pages</span>
+                            <span>Personal</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-right pull-right"></i>
                             </span>
@@ -335,37 +338,40 @@
                     <li class="treeview">
                         <a href="#">
                             <i data-feather="grid"></i>
-                            <span>Cuadro Numérico Provincia</span>
+                            <span>Cuadro Num. Provincia</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-right pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="components_alerts.html"><i class="ti-more"></i>Cuadro Numérico Provincia</a></li>
+                            <li><a href="components_alerts.html"><i class="ti-more"></i>Cuadro Num. Provincia</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="treeview">
                         <a href="#">
                             <i data-feather="grid"></i>
-                            <span>Cuadro Numérico Lima y Provincia</span>
+                            <span>Cuadro Lima y Provincia</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-right pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="components_alerts.html"><i class="ti-more"></i>Cuadro Numérico Lima y Provincia</a></li>
+                            <li><a href="components_alerts.html"><i class="ti-more"></i>Cuadro Lima y
+                                    Provincia</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
                         <a href="#">
                             <i data-feather="grid"></i>
-                            <span>Cuadro Numérico Personal</span>
+                            <span>Cuadro Num. Personal</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-right pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="components_alerts.html"><i class="ti-more"></i>Cuadro Numérico Personal</a></li>
+                            <li><a href="components_alerts.html"><i class="ti-more"></i>Cuadro Num. Personal</a>
+                            </li>
                         </ul>
                     </li>
 
@@ -391,7 +397,7 @@
 
                 <!-- Main content -->
                 <section class="content">
-                    
+
                 </section>
                 <!-- /.content -->
             </div>
@@ -447,7 +453,8 @@
 
                         <div class="media py-10 px-0">
                             <a class="avatar avatar-lg status-danger" href="#">
-                                <img src="../images/avatar/2.jpg" alt="...">
+                                {{-- <img src="../images/avatar/2.jpg" alt="..."> --}}
+                                <img src="{{ asset('images/avatar/2.jpg') }}" alt="...">
                             </a>
                             <div class="media-body">
                                 <p class="font-size-16">
@@ -460,7 +467,8 @@
 
                         <div class="media py-10 px-0">
                             <a class="avatar avatar-lg status-warning" href="#">
-                                <img src="../images/avatar/3.jpg" alt="...">
+                                {{-- <img src="../images/avatar/3.jpg" alt="..."> --}}
+                                <img src="{{ asset('images/avatar/3.jpg') }}" alt="...">
                             </a>
                             <div class="media-body">
                                 <p class="font-size-16">
@@ -473,7 +481,8 @@
 
                         <div class="media py-10 px-0">
                             <a class="avatar avatar-lg status-primary" href="#">
-                                <img src="../images/avatar/4.jpg" alt="...">
+                                {{-- <img src="../images/avatar/4.jpg" alt="..."> --}}
+                                <img src="{{ asset('images/avatar/4.jpg') }}" alt="...">
                             </a>
                             <div class="media-body">
                                 <p class="font-size-16">
@@ -486,7 +495,8 @@
 
                         <div class="media py-10 px-0">
                             <a class="avatar avatar-lg status-success" href="#">
-                                <img src="../images/avatar/1.jpg" alt="...">
+                                {{-- <img src="../images/avatar/1.jpg" alt="..."> --}}
+                                <img src="{{ asset('images/avatar/1.jpg') }}" alt="...">
                             </a>
                             <div class="media-body">
                                 <p class="font-size-16">
@@ -499,7 +509,8 @@
 
                         <div class="media py-10 px-0">
                             <a class="avatar avatar-lg status-danger" href="#">
-                                <img src="../images/avatar/2.jpg" alt="...">
+                                {{-- <img src="../images/avatar/2.jpg" alt="..."> --}}
+                                <img src="{{ asset('images/avatar/2.jpg') }}" alt="...">
                             </a>
                             <div class="media-body">
                                 <p class="font-size-16">
@@ -512,7 +523,8 @@
 
                         <div class="media py-10 px-0">
                             <a class="avatar avatar-lg status-warning" href="#">
-                                <img src="../images/avatar/3.jpg" alt="...">
+                                {{-- <img src="../images/avatar/3.jpg" alt="..."> --}}
+                                <img src="{{ asset('images/avatar/3.jpg') }}" alt="...">
                             </a>
                             <div class="media-body">
                                 <p class="font-size-16">
@@ -525,7 +537,8 @@
 
                         <div class="media py-10 px-0">
                             <a class="avatar avatar-lg status-primary" href="#">
-                                <img src="../images/avatar/4.jpg" alt="...">
+                                {{-- <img src="../images/avatar/4.jpg" alt="..."> --}}
+                                <img src="{{ asset('images/avatar/4.jpg') }}" alt="...">
                             </a>
                             <div class="media-body">
                                 <p class="font-size-16">
@@ -678,7 +691,7 @@
     <!-- ./wrapper -->
 
 
-    <!-- Vendor JS -->
+    {{-- <!-- Vendor JS -->
     <script src="../js1/vendors.min.js"></script>
     <script src="../assets/icons/feather-icons/feather.min.js"></script>
     <script src="../assets/vendor_components/easypiechart/dist/jquery.easypiechart.js"></script>
@@ -687,7 +700,20 @@
 
     <!-- Sunny Admin App -->
     <script src="../js1/template.js"></script>
-    <script src="../js1/pages/dashboard.js"></script>
+    <script src="../js1/pages/dashboard.js"></script> --}}
+
+
+    <!-- Vendor JS -->
+    <script src="{{ asset('js/vendors.min.js') }}"></script>
+    <script src="{{ asset('assets/icons/feather-icons/feather.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor_components/easypiechart/dist/jquery.easypiechart.js') }}"></script>
+    <script src="{{ asset('assets/vendor_components/apexcharts-bundle/irregular-data-series.js') }}"></script>
+    <script src="{{ asset('assets/vendor_components/apexcharts-bundle/dist/apexcharts.js') }}"></script>
+
+    <!-- Sunny Admin App -->
+    <script src="{{ asset('js/template.js') }}"></script>
+    <script src="{{ asset('js/pages/dashboard.js') }}"></script>
+
 
 
 </body>
