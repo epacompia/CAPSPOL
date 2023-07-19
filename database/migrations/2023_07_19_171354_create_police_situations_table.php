@@ -15,8 +15,14 @@ return new class extends Migration
     {
         Schema::create('police_situations', function (Blueprint $table) {
             $table->id();
-            $table->person_id();
+            $table->unsignedBigInteger('person_id');
+            $table->string('name');
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->text('description')->nullable();
             $table->timestamps();
+
+            $table->foreign('person_id')->references('id')->on('persons')->onDelete('cascade');
         });
     }
 

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('sub_units', function (Blueprint $table) {
             $table->id();
-            $table->stirng('unit_name',50);
+            $table->string('unit_name',50);
             $table->string('department',50);
             $table->string('department_final',50);
             $table->timestamps();
