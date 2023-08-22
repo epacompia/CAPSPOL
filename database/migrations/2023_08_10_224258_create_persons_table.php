@@ -54,7 +54,7 @@ return new class extends Migration
             $table->foreign('degree_id')->references('id')->on('degrees')->onDelete('cascade');;
             $table->foreign('position_id')->references('id')->on('positions')->onDelete('cascade');;
             $table->foreign('sub_unit_id')->references('id')->on('sub_units')->onDelete('cascade');;
-            $table->foreign('speciality_id')->references('id')->on('specialities')->onDelete('cascade');;
+            $table->foreign('speciality_id')->references('id')->on('specialties')->onDelete('cascade');;
             $table->foreign('police_station_id')->references('id')->on('police_stations')->onDelete('cascade');;
 
         });

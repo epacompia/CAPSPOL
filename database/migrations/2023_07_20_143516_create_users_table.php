@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('person_id');
+            //$table->unsignedBigInteger('person_id');
             $table->string('name');
             $table->string('surname',50);
             $table->string('username',12);
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-            $table->foreign('person_id')->references('id')->on('persons')->onDelete('cascade');
+            //$table->foreign('person_id')->references('id')->on('persons')->onDelete('cascade');
         });
     }
 
