@@ -5,17 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cip_status extends Model
+class Degree extends Model
 {
     use HasFactory;
 
     protected $fillable=[
-        'name'
+        'grade',
+        'description',
+        'flag',
     ];
 
+    protected $table='degrees';
 
-    protected $table='cip_statuses';
-    protected $hidden=[
 
-    ];
+    protected $hidden=[];
+
 }

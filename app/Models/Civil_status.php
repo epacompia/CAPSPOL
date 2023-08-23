@@ -5,17 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cip_status extends Model
+class Civil_status extends Model
 {
     use HasFactory;
 
     protected $fillable=[
-        'name'
+        'name',
     ];
 
+    protected $table='civil_statuses';
 
-    protected $table='cip_statuses';
     protected $hidden=[
 
     ];
+
+
 }

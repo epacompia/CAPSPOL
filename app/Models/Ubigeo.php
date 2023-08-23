@@ -5,16 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cip_status extends Model
+class Ubigeo extends Model
 {
     use HasFactory;
 
     protected $fillable=[
-        'name'
+        'department',
+        'province',
+        'district',
     ];
 
+    protected $table='ubigeos';
 
-    protected $table='cip_statuses';
     protected $hidden=[
 
     ];

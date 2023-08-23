@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cip_status extends Model
+class Psychosomatic_aptitud extends Model
 {
     use HasFactory;
 
     protected $fillable=[
-        'name'
+        'name',
     ];
 
+    protected $table='psychosomatic_aptitudes';
 
-    protected $table='cip_statuses';
     protected $hidden=[
 
     ];
